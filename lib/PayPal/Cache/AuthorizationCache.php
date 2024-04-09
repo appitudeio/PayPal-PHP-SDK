@@ -53,7 +53,7 @@ abstract class AuthorizationCache
      * @param      $tokenExpiresIn
      * @throws \Exception
      */
-    public static function push($config = null, $clientId=NULL, $accessToken=NULL, $tokenCreateTime=NULL, $tokenExpiresIn=NULL)
+    public static function push($config, $clientId, $accessToken, $tokenCreateTime, $tokenExpiresIn)
     {
         // Return if not enabled
         if (!self::isEnabled($config)) {
