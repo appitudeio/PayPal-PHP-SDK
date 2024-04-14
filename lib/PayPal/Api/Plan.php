@@ -180,7 +180,7 @@ class Plan extends PayPalResourceModel
     /**
      * 
      *
-     * 
+     * @return []
      */
     public function getBillingCycles()
     {
