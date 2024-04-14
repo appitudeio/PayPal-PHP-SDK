@@ -164,129 +164,49 @@ class Plan extends PayPalResourceModel
     public function getProductId()
     {
         return $this->productId;
+    }
+
+    /**
+     * 
+     * 
+     * @return $this
+     */
+    public function setBillingCycles($billing_cycles)
+    {
+        $this->billing_cycles = $billing_cycles;
+        return $this;
+    }
+
+    /**
+     * 
+     *
+     * 
+     */
+    public function getBillingCycles()
+    {
+        return $this->billing_cycles;
+    }
+
+    /**
+     * 
+     * 
+     * @return $this
+     */
+    public function setPaymentPreferences($payment_preferences)
+    {
+        $this->payment_preferences = $payment_preferences;
+        return $this;
+    }
+
+    /**
+     * 
+     *
+     * 
+     */
+    public function getPaymentPreferences()
+    {
+        return $this->payment_preferences;
     }    
-
-    /**
-     * Time when the billing plan was created. Format YYYY-MM-DDTimeTimezone, as defined in [ISO8601](http://tools.ietf.org/html/rfc3339#section-5.6).
-     *
-     * @param string $create_time
-     * 
-     * @return $this
-     */
-    public function setCreateTime($create_time)
-    {
-        $this->create_time = $create_time;
-        return $this;
-    }
-
-    /**
-     * Time when the billing plan was created. Format YYYY-MM-DDTimeTimezone, as defined in [ISO8601](http://tools.ietf.org/html/rfc3339#section-5.6).
-     *
-     * @return string
-     */
-    public function getCreateTime()
-    {
-        return $this->create_time;
-    }
-
-    /**
-     * Time when this billing plan was updated. Format YYYY-MM-DDTimeTimezone, as defined in [ISO8601](http://tools.ietf.org/html/rfc3339#section-5.6).
-     *
-     * @param string $update_time
-     * 
-     * @return $this
-     */
-    public function setUpdateTime($update_time)
-    {
-        $this->update_time = $update_time;
-        return $this;
-    }
-
-    /**
-     * Time when this billing plan was updated. Format YYYY-MM-DDTimeTimezone, as defined in [ISO8601](http://tools.ietf.org/html/rfc3339#section-5.6).
-     *
-     * @return string
-     */
-    public function getUpdateTime()
-    {
-        return $this->update_time;
-    }
-
-    /**
-     * Array of payment definitions for this billing plan.
-     *
-     * @param \PayPal\Api\PaymentDefinition[] $payment_definitions
-     * 
-     * @return $this
-     */
-    public function setPaymentDefinitions($payment_definitions)
-    {
-        $this->payment_definitions = $payment_definitions;
-        return $this;
-    }
-
-    /**
-     * Array of payment definitions for this billing plan.
-     *
-     * @return \PayPal\Api\PaymentDefinition[]
-     */
-    public function getPaymentDefinitions()
-    {
-        return $this->payment_definitions;
-    }
-
-    /**
-     * Append PaymentDefinitions to the list.
-     *
-     * @param \PayPal\Api\PaymentDefinition $paymentDefinition
-     * @return $this
-     */
-    public function addPaymentDefinition($paymentDefinition)
-    {
-        if (!$this->getPaymentDefinitions()) {
-            return $this->setPaymentDefinitions(array($paymentDefinition));
-        } else {
-            return $this->setPaymentDefinitions(
-                array_merge($this->getPaymentDefinitions(), array($paymentDefinition))
-            );
-        }
-    }
-
-    /**
-     * Remove PaymentDefinitions from the list.
-     *
-     * @param \PayPal\Api\PaymentDefinition $paymentDefinition
-     * @return $this
-     */
-    public function removePaymentDefinition($paymentDefinition)
-    {
-        return $this->setPaymentDefinitions(
-            array_diff($this->getPaymentDefinitions(), array($paymentDefinition))
-        );
-    }
-
-    /**
-     * Array of terms for this billing plan.
-     *
-     * @param \PayPal\Api\Terms[] $terms
-     * 
-     * @return $this
-     */
-    public function setTerms($terms)
-    {
-        $this->terms = $terms;
-        return $this;
-    }
-
-    /**
-     * Array of terms for this billing plan.
-     *
-     * @return \PayPal\Api\Terms[]
-     */
-    public function getTerms()
-    {
-        return $this->terms;
-    }
 
     /**
      * CREATED, INACTIVE, ACTIVE
@@ -308,59 +228,6 @@ class Plan extends PayPalResourceModel
     {
         return $this->status;
     }    
-
-    /**
-     * Append Terms to the list.
-     *
-     * @param \PayPal\Api\Terms $terms
-     * @return $this
-     */
-    public function addTerm($terms)
-    {
-        if (!$this->getTerms()) {
-            return $this->setTerms(array($terms));
-        } else {
-            return $this->setTerms(
-                array_merge($this->getTerms(), array($terms))
-            );
-        }
-    }
-
-    /**
-     * Remove Terms from the list.
-     *
-     * @param \PayPal\Api\Terms $terms
-     * @return $this
-     */
-    public function removeTerm($terms)
-    {
-        return $this->setTerms(
-            array_diff($this->getTerms(), array($terms))
-        );
-    }
-
-    /**
-     * Specific preferences such as: set up fee, max fail attempts, autobill amount, and others that are configured for this billing plan.
-     *
-     * @param \PayPal\Api\MerchantPreferences $merchant_preferences
-     * 
-     * @return $this
-     */
-    public function setMerchantPreferences($merchant_preferences)
-    {
-        $this->merchant_preferences = $merchant_preferences;
-        return $this;
-    }
-
-    /**
-     * Specific preferences such as: set up fee, max fail attempts, autobill amount, and others that are configured for this billing plan.
-     *
-     * @return \PayPal\Api\MerchantPreferences
-     */
-    public function getMerchantPreferences()
-    {
-        return $this->merchant_preferences;
-    }
 
     /**
      * Retrieve the details for a particular billing plan by passing the billing plan ID to the request URI.
