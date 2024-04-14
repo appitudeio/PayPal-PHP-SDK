@@ -338,7 +338,8 @@ class Plan extends PayPalResourceModel
             'page_size' => 1,
             'status' => 1,
             'page' => 1,
-            'total_required' => 1
+            'total_required' => 1,
+            'product_id' => null
         );
         $json = self::executeCall(
             "/v1/billing/plans/" . "?" . http_build_query(array_intersect_key($params, $allowedParams)),
