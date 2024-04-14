@@ -144,6 +144,29 @@ class Plan extends PayPalResourceModel
     }
 
     /**
+     * Attach a product
+     *
+     * @param string $productId
+     * 
+     * @return $this
+     */
+    public function setProductId($productId)
+    {
+        $this->product_id = $productId;
+        return $this;
+    }
+
+    /**
+     * 
+     *
+     * @return string
+     */
+    public function getProductId()
+    {
+        return $this->productId;
+    }    
+
+    /**
      * Time when the billing plan was created. Format YYYY-MM-DDTimeTimezone, as defined in [ISO8601](http://tools.ietf.org/html/rfc3339#section-5.6).
      *
      * @param string $create_time

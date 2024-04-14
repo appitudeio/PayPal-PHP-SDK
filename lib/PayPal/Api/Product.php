@@ -144,6 +144,52 @@ class Product extends PayPalResourceModel
     }
 
     /**
+     * Image URL
+     *
+     * @param string $category
+     * 
+     * @return $this
+     */
+    public function setImageUrl($image_url)
+    {
+        $this->image_url = $image_url;
+        return $this;
+    }
+
+    /**
+     * 
+     *
+     * @return string
+     */
+    public function getImageUrl()
+    {
+        return $this->image_url;
+    }    
+
+    /**
+     * Image URL
+     *
+     * @param string $category
+     * 
+     * @return $this
+     */
+    public function setHomeUrl($home_url)
+    {
+        $this->home_url = $home_url;
+        return $this;
+    }
+
+    /**
+     * 
+     *
+     * @return string
+     */
+    public function getHomeUrl()
+    {
+        return $this->home_url;
+    }        
+
+    /**
      * Retrieve the details for a particular billing plan by passing the billing plan ID to the request URI.
      *
      * @param string $productId
