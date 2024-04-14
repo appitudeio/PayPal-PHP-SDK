@@ -289,6 +289,27 @@ class Plan extends PayPalResourceModel
     }
 
     /**
+     * CREATED, INACTIVE, ACTIVE
+     * 
+     * @return $this
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
+        return $this;
+    }
+
+    /**
+     * Array of terms for this billing plan.
+     *
+     * @return \PayPal\Api\Terms[]
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }    
+
+    /**
      * Append Terms to the list.
      *
      * @param \PayPal\Api\Terms $terms
