@@ -26,7 +26,7 @@ use PayPal\Validation\ArgumentValidator;
  * @property \PayPal\Api\Terms[] terms
  * @property \PayPal\Api\MerchantPreferences merchant_preferences
  */
-class Plan extends PayPalResourceModel
+class Subscription extends PayPalResourceModel
 {
     /**
      * Identifier of the billing plan. 128 characters max.
