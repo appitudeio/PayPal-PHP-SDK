@@ -121,6 +121,29 @@ class Subscription extends PayPalResourceModel
     }
 
     /**
+     * Name of the billing plan. 128 characters max.
+     *
+     * @param string $name
+     * 
+     * @return $this
+     */
+    public function setApplicationContext($context)
+    {
+        $this->application_context = $context;
+        return $this;
+    }
+
+    /**
+     * Name of the billing plan. 128 characters max.
+     *
+     * @return []
+     */
+    public function getApplicationContext()
+    {
+        return $this->application_context;
+    }    
+
+    /**
      * Description of the billing plan. 128 characters max.
      *
      * @param string $description
