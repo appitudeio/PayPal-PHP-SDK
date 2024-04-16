@@ -75,6 +75,52 @@ class Subscription extends PayPalResourceModel
     }
 
     /**
+     * Name of the billing plan. 128 characters max.
+     *
+     * @param string $name
+     * 
+     * @return $this
+     */
+    public function setCustomId($customId)
+    {
+        $this->custom_id = $customId;
+        return $this;
+    }
+
+    /**
+     * Name of the billing plan. 128 characters max.
+     *
+     * @return string
+     */
+    public function getCustomId()
+    {
+        return $this->custom_id;
+    }
+
+    /**
+     * Name of the billing plan. 128 characters max.
+     *
+     * @param string $name
+     * 
+     * @return $this
+     */
+    public function setSubscriber($subscriber)
+    {
+        $this->subscriber = $subscriber;
+        return $this;
+    }
+
+    /**
+     * Name of the billing plan. 128 characters max.
+     *
+     * @return $subscriber[]
+     */
+    public function getSubscriber()
+    {
+        return $this->subscriber;
+    }
+
+    /**
      * Description of the billing plan. 128 characters max.
      *
      * @param string $description
