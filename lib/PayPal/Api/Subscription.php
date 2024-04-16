@@ -113,7 +113,7 @@ class Subscription extends PayPalResourceModel
     /**
      * Name of the billing plan. 128 characters max.
      *
-     * @return $subscriber[]
+     * @return []
      */
     public function getSubscriber()
     {
